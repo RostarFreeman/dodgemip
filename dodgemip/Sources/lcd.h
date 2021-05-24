@@ -6,7 +6,7 @@
 #include "derivative.h"
 #include "pinout.h"
 
-/* Config flags (lcdEntryMode)*/
+/* Config flags (lcdFunctionSet)*/
 #define LCD_BITMODE  (uint8_t)(1 << 4)
 #define LCD_LINEMODE (uint8_t)(1 << 3)
 #define LCD_CHARRES  (uint8_t)(1 << 2)
@@ -27,14 +27,14 @@
 #define LCD_BLINKON    (uint8_t)(1 << 0)
 #define LCD_BLINKOFF   (uint8_t)(0 << 0)
 
-/* Entry mode flags */
-#define LCD_DIR      (uint8_t)(1 << 0)
-#define LCD_SHIFT    (uint8_t)(1 << 1)
+/* Entry mode flags (lcdEntryMode) */
+#define LCD_DIR      (uint8_t)(1 << 1)
+#define LCD_SHIFT    (uint8_t)(1 << 0)
 
-#define LCD_RIGHT    (uint8_t)(0 << 0)
-#define LCD_LEFT     (uint8_t)(1 << 0)
-#define LCD_SHIFTOFF (uint8_t)(0 << 1)
-#define LCD_SHIFTON  (uint8_t)(1 << 1)
+#define LCD_RIGHT    (uint8_t)(0 << 1)
+#define LCD_LEFT     (uint8_t)(1 << 1)
+#define LCD_SHIFTOFF (uint8_t)(0 << 0)
+#define LCD_SHIFTON  (uint8_t)(1 << 0)
 
 /* Word2Screen setting pins */
 #define LCD_SET_RS_INDEX (0)
@@ -43,16 +43,22 @@
 #define LCD_SET_RS (uint8_t)(1 << LCD_SET_RS_INDEX)
 #define LCD_SET_RW (uint8_t)(1 << LCD_SET_RW_INDEX)
 
+/* Control over character placement when writing on the lcd*/
+typedef struct {
+	int line;
+	int column;
+}lcdStatus_t;
 
 void lcdSetup();
 void lcdWord2Screen(uint8_t settings, uint8_t data);
+void lcdWriteDelay();
 
-inline void lcdWrite(uint8_t data);
-void lcdConfig(uint8_t flags);
+void lcdWrite(uint8_t data);
 inline void lcdEntryMode(uint8_t flags);
-inline void lcdDisplayCursor(uint8_t toggle);
+inline void lcdFunctionSet(uint8_t flags);
+inline void lcdDisplay(uint8_t toggle);
 inline void lcdClear();
 inline void lcdHome();
-uint8_t lcdRead();
+void lcdPlaceCursor(int position);
 
 #endif /* LCD_H_ */

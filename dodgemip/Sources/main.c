@@ -17,152 +17,28 @@ int main(void)
 {
 	lcdSetup();
 	delay(100000);
-	lcdEntryMode(LCD_8BIT | LCD_LORES | LCD_2LINE);
+	lcdFunctionSet(LCD_8BIT | LCD_LORES | LCD_2LINE);
 	delay(100000);
-	lcdDisplayCursor(LCD_CURSOROFF | LCD_DISPLAYON | LCD_BLINKOFF);
+	lcdDisplay(LCD_CURSOROFF | LCD_DISPLAYON | LCD_BLINKOFF);
 	delay(100000);
 	lcdClear();
 	delay(1000000);
 	lcdHome();
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_BLANK);
-	delay(10000);
-	lcdWrite(GAME_CHARACTER);
-	delay(10000);
-	lcdWrite(GAME_FW);
-	delay(10000);
-	lcdWrite(GAME_BW);
-	delay(10000);
-	lcdWrite(GAME_BLOCK);
-	delay(10000);
 	
-	
-	
-	for(;;) {}
+
+
+
+	for(;;) {
+		int i = 0;
+		for (i = 0; i < 32; i++) {
+			lcdWrite(GAME_CHARACTER);
+		}
+		delay(250000);
+		for (i = 0; i < 32; i++) {
+			lcdWrite(GAME_BLOCK);
+		}
+		delay(250000);
+	}
 	
 	return 0;
 }
