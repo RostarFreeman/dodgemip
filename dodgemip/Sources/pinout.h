@@ -8,7 +8,7 @@
 #ifndef PINOUT_H_
 #define PINOUT_H_
 
-// All pins are connected to Port C
+// All lcd pins are connected to Port C
 
 #define LCD_RS_PIN (16)
 #define LCD_RW_PIN (13)
@@ -36,9 +36,10 @@
 #define LCD_DB6 (1 << LCD_DB6_PIN) 
 #define LCD_DB7 (1 << LCD_DB7_PIN)
 
+// All buttons are connected to Port A
 
-#define BTN_UP_PIN (9)
-#define BTN_DW_PIN (8)
+#define BTN_UP_PIN (1)
+#define BTN_DW_PIN (2)
 #define BTN_UP (1 << BTN_UP_PIN)
 #define BTN_DW (1 << BTN_DW_PIN)
 

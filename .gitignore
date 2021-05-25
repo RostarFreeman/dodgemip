@@ -77,3 +77,4 @@ dodgemip/FLASH/dodgemip.args
 dodgemip/.settings/com.freescale.core.ide.newprojectwizard.prefs
 dodgemip/.settings/com.freescale.core.ide.cdt.toolchain.prefs
 dodgemip/.cwGeneratedFileSetLog
+dodgemip/FLASH/Sources/input_button.args

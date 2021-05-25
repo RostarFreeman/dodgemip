@@ -15,8 +15,7 @@ lcdStatus_t line_status = {0, 0};
  * @function: 	lcdSetup
  * @param: 		none
  * @return: 	none
- * @brief: 		Sets up pins for the LCD screen as output and 
- * 		   		sends clock signal to port C
+ * @brief: 		Sets up pins for the LCD screen as output.
  */
 void lcdSetup() {
 	SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
@@ -82,10 +81,10 @@ void lcdWord2Screen(uint8_t settings, uint8_t data) {
  * @function: 	lcdWriteDelay
  * @param: 		none
  * @return: 	none
- * @brief: 		Idles system for 1000 cycles
+ * @brief: 		Idles system for 250 cycles
  */
 void lcdWriteDelay() {
-	int i = 1000;
+	int i = 250;
 	
 	for (; i > 0; i--) {}
 }
@@ -94,7 +93,8 @@ void lcdWriteDelay() {
  * @function: 	lcdWrite
  * @param: 		data: Character to be written on the lcd screen
  * @return: 	none
- * @brief: 		Writes character on the lcd screen. Loops over all 32 positions cyclically.
+ * @brief: 		Writes character on the lcd screen. Loops over all 32 positions 
+ * 				cyclically.
  */
 void lcdWrite(uint8_t data) {
 	lcdWord2Screen(LCD_SET_RS, data);

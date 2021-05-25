@@ -19,7 +19,6 @@
 #define LCD_LORES (uint8_t)(0 << 2)
 
 /* Display Flags (lcdDisplayCursor) */
-
 #define LCD_DISPLAYON  (uint8_t)(1 << 2)
 #define LCD_DISPLAYOFF (uint8_t)(0 << 2)
 #define LCD_CURSORON   (uint8_t)(1 << 1)
