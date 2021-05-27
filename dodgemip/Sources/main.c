@@ -52,37 +52,37 @@ void generateObstacles(gamestate_t* status) {
 		
 		switch (randvalue % 4) {
 		case 1: 	// Block
-			if (status->buffer[other] != GAME_BLOCK  
-					&& status->buffer[other - 1] != GAME_BLOCK
-					&& status->buffer[other - 2] != GAME_BLOCK
+			if (status->buffer[other] 				!= GAME_BLOCK  
+					&& status->buffer[other - 1] 	!= GAME_BLOCK
+					&& status->buffer[other - 2] 	!= GAME_BLOCK
 					&& status->buffer[position - 1] != GAME_FW)
 				status->buffer[position] = GAME_BLOCK;
 			else
 				status->buffer[position] = GAME_BLANK;
 			break;
 		case 2:		// Forward
-			if (status->buffer[position - 1] != GAME_FW
+			if (status->buffer[position - 1] 		!= GAME_FW
 					&& status->buffer[position - 2] != GAME_FW
-					&& status->buffer[other - 1] != GAME_FW
-					&& status->buffer[other - 2] != GAME_FW
+					&& status->buffer[other - 1] 	!= GAME_FW
+					&& status->buffer[other - 2] 	!= GAME_FW
 					&& status->buffer[position - 1] != GAME_BW
 					&& status->buffer[position - 2] != GAME_BW
-					&& status->buffer[other - 1] != GAME_BW
-					&& status->buffer[other - 2] != GAME_BW
+					&& status->buffer[other - 1] 	!= GAME_BW
+					&& status->buffer[other - 2] 	!= GAME_BW
 					)
 				status->buffer[position] = GAME_FW;
 			else
 				status->buffer[position] = GAME_BLANK;
 			break;
 		case 3:		// Backward
-			if (status->buffer[position - 1] != GAME_FW
+			if (status->buffer[position - 1] 		!= GAME_FW
 					&& status->buffer[position - 2] != GAME_FW
-					&& status->buffer[other - 1] != GAME_FW
-					&& status->buffer[other - 2] != GAME_FW
+					&& status->buffer[other - 1] 	!= GAME_FW
+					&& status->buffer[other - 2] 	!= GAME_FW
 					&& status->buffer[position - 1] != GAME_BW
 					&& status->buffer[position - 2] != GAME_BW
-					&& status->buffer[other - 1] != GAME_BW
-					&& status->buffer[other - 2] != GAME_BW
+					&& status->buffer[other - 1] 	!= GAME_BW
+					&& status->buffer[other - 2] 	!= GAME_BW
 					)
 				status->buffer[position] = GAME_BW;
 			else
