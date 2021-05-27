@@ -23,8 +23,7 @@
 
 /**
  * Captures the last pressed key. For the game this is enough since it only has
- * two possible inputs. For the menu we should add something else like an ack
- * field.
+ * two possible inputs.
  */
 typedef struct {
 	uint8_t status_word;

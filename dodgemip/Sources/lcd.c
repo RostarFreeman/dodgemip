@@ -89,6 +89,19 @@ void lcdWriteDelay() {
 	for (; i > 0; i--) {}
 }
 
+
+/**
+ * @function: 	lcdDisplacementDelay
+ * @param: 		none
+ * @return: 	none
+ * @brief: 		Idles system for 1500 cycles
+ */
+void lcdDisplacementDelay() {
+	int i = 1500;
+	
+	for (; i > 0; i--) {}
+}
+
 /**
  * @function: 	lcdWrite
  * @param: 		data: Character to be written on the lcd screen
@@ -133,6 +146,7 @@ inline void lcdHome() {
 	lcdWord2Screen(0, 0b00000011);
 	line_status.line = 0;
 	line_status.column = 0;
+	lcdDisplacementDelay();
 }
 
 /**
@@ -194,4 +208,6 @@ void lcdPlaceCursor(int position) {
 	}
 	line_status.column = position % 16;
 	lcdWord2Screen(0, address);
+	lcdDisplacementDelay();
+	
 }
