@@ -1,10 +1,9 @@
-/*
- * lcd.c
- *
- *  Created on: May 9, 2021
- *      Author: Pau
+/**
+ * @file: 		lcd.c
+ * @revision:	1.0
+ * @date:	 	27-May-2021
+ * @brief:		Implements lcd screen usage and abstraction.
  */
-
 
 #include "lcd.h"
 
@@ -45,8 +44,8 @@ void lcdSetup() {
 
 /**
  * @function: 	lcdWord2Screen
- * @param: 		settings: Flags for control pins RS, RW
- * 		   		data: Data to send over DB0-DB7 to the LCD
+ * @param: 		settings: Flags for control pins RS, RW.
+ * 		   		data: Data to send over DB0-DB7 to the LCD.
  * @return: 	none 
  * @brief: 		Abstracts pinout when writing to the lcd
  * 		   		as two register writes. Delays for 2000 cycles.
@@ -94,7 +93,7 @@ void lcdWriteDelay() {
  * @function: 	lcdDisplacementDelay
  * @param: 		none
  * @return: 	none
- * @brief: 		Idles system for 1500 cycles
+ * @brief: 		Idles system for 1500 cycles.
  */
 void lcdDisplacementDelay() {
 	int i = 1500;
@@ -140,7 +139,7 @@ inline void lcdClear() {
  * @function: 	lcdHome
  * @param: 		none
  * @return: 	none
- * @brief: 		Places cursor on the starting position
+ * @brief: 		Places cursor on the starting position.
  */
 inline void lcdHome() {
 	lcdWord2Screen(0, 0b00000011);
@@ -151,10 +150,10 @@ inline void lcdHome() {
 
 /**
  * @function: 	lcdFunctionSet
- * @param: 		flags: Configuration flags (see lcd.h)
+ * @param: 		flags: Configuration flags (see lcd.h).
  * @return: 	none
  * @brief: 		Configures operation mode for the lcd screen 
- * 		   		(8bit/4bit, 1/2 lines, 8/10 px characters)
+ * 		   		(8bit/4bit, 1/2 lines, 8/10 px characters).
  */
 inline void lcdFunctionSet(uint8_t flags) {
 	uint8_t mode = 0b00100000 | flags;
@@ -163,10 +162,10 @@ inline void lcdFunctionSet(uint8_t flags) {
 
 /**
  * @function: 	lcdDisplay
- * @param: 		flags: Configuration flags (see lcd.h)
+ * @param: 		flags: Configuration flags (see lcd.h).
  * @return: 	none
  * @brief: 		Configures display and the cursor (cursor on/off, 
- * 		   		cursor blink, display stuff on-screen)
+ * 		   		cursor blink, display stuff on-screen).
  */
 inline void lcdDisplay(uint8_t flags) {
 	uint8_t mode = 0b00001000 | flags;
@@ -191,7 +190,7 @@ inline void lcdEntryMode(uint8_t flags) {
 /**
  * @function: 	lcdPlaceCursor
  * @param: 		position: New placement for the cursor (consider reading
- * 				order and both rows when counting the position)
+ * 				order and both rows when counting the position).
  * @return: 	none
  * @brief: 		Places cursor on the defined position. Further character
  * 				writes (lcdWrite calls) will be performed there.

@@ -1,8 +1,8 @@
-/*
- * input_button.h
- *
- *  Created on: May 24, 2021
- *      Author: Pau
+/**
+ * @file: 		input_button.h
+ * @revision:	1.0
+ * @date:	 	27-May-2021
+ * @brief: 		Implements input button handling with interrupts.
  */
 
 #ifndef INPUT_BUTTON_H_
@@ -19,7 +19,7 @@
 #define BTN_DW_PRESSED (uint8_t)(2)
 
 #define BTN_ACKNOWLEDGED (uint8_t)(1)
-#define BTN_PENDING		 (uint8_t)(1)
+#define BTN_PENDING		 (uint8_t)(0)
 
 /**
  * Captures the last pressed key. For the game this is enough since it only has

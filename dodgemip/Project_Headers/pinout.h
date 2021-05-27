@@ -1,8 +1,8 @@
-/*
- * pinout.h
- *
- *  Created on: May 9, 2021
- *      Author: Pau
+/**
+ * @file: 		pinout.h
+ * @revision:	1.0
+ * @date:	 	27-May-2021
+ * @brief: 		Defines global pin wiring and useful consts.
  */
 
 #ifndef PINOUT_H_

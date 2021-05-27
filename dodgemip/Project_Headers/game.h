@@ -39,6 +39,12 @@ int seed;
 #define GAME_NOENTITY	(99)
 
 
+/* Possible game modes. Implemented as a state machine 
+ * 		GAME_READYSCREEN	Initial "press up to play" screen with previous time
+ * 		GAME_BLINKING		Blinking entity screen
+ * 		GAME_INGAME			Game screen
+ * 		GAME_GAMEOVER		Game over screen
+ * */
 typedef enum {
 	GAME_READYSCREEN,
 	GAME_BLINKING,
@@ -46,6 +52,19 @@ typedef enum {
 	GAME_GAMEOVER,
 } states_t;
 
+/* 
+ * Structure containing the state of the game. Could be done with a Union for
+ * space efficiency, but it works well this way.
+ * 		ticks:		 	Game update count.
+ * 		state: 		 	Game mode.
+ * 		buffer: 	 	LCD output (without game entity, which is rendered afterwards)
+ * 		entityPos:	 	Entity placement on screen. GAME_NOENTITY if not present.
+ * 		prevTime:	 	Previous survival time.
+ * 		difficulty:	 	Number of ticks before obstacle displacement.
+ * 		phaseTimer:  	Used to time specific events (scene transition, difficulty
+ * 					 	change, blinking).
+ * 		updateTimer: 	Timer keeping track of ticks before updating obstacles.
+ */
 typedef struct {
 	unsigned int ticks;
 	states_t state;
@@ -56,6 +75,7 @@ typedef struct {
 	int phaseTimer;
 	int updateTimer;
 } gamestate_t;
+
 
 unsigned int random();
 void cleanBuffer(gamestate_t* status);
@@ -70,5 +90,7 @@ void updateGame(gamestate_t* status, uint8_t input);
 void drawGame(gamestate_t* status);
 void initialiseStatus(gamestate_t* status);
 void waitFrame(gamestate_t* status);
+void bufferUpToPlay(gamestate_t* status);
+void gameOver(gamestate_t* status);
 
 #endif /* GAME_H_ */

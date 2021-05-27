@@ -1,3 +1,10 @@
+/**
+ * @file: 		lcd.h
+ * @revision:	1.0
+ * @date:	 	27-May-2021
+ * @brief: 		Implements lcd screen usage and abstraction.
+ */
+
 #ifndef LCD_H_
 #define LCD_H_
 

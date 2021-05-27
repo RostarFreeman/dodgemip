@@ -1,10 +1,9 @@
-/*
- * input_button.c
- *
- *  Created on: May 24, 2021
- *      Author: Pau
+/**
+ * @file: 		input_button.c
+ * @revision:	1.0
+ * @date:	 	27-May-2021
+ * @brief: 		Implements input button handling with interrupts.
  */
-
 
 #include "input_button.h"
 
