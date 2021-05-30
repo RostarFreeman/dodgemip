@@ -446,12 +446,17 @@ int main(void)
 	// Pin setup for the input button and the LCD
 	lcdSetup();
 	ibSetup();
+	delay(1000000);
 	
 	// Set up LCD Screen
 	lcdFunctionSet(LCD_8BIT | LCD_LORES | LCD_2LINE);
+	delay(1000000);
 	lcdDisplay(LCD_CURSOROFF | LCD_DISPLAYON | LCD_BLINKOFF);
+	delay(100000);
 	lcdClear();
+	delay(100000);
 	lcdHome();
+	delay(100000);
 	
 	// Set up timer
 	setupTimer();

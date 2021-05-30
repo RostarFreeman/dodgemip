@@ -158,6 +158,7 @@ inline void lcdHome() {
 inline void lcdFunctionSet(uint8_t flags) {
 	uint8_t mode = 0b00100000 | flags;
 	lcdWord2Screen(0, mode);
+	lcdDisplacementDelay();
 }
 
 /**
@@ -170,6 +171,7 @@ inline void lcdFunctionSet(uint8_t flags) {
 inline void lcdDisplay(uint8_t flags) {
 	uint8_t mode = 0b00001000 | flags;
 	lcdWord2Screen(0, mode);
+	lcdDisplacementDelay();
 }
 
 
@@ -185,6 +187,7 @@ inline void lcdDisplay(uint8_t flags) {
 inline void lcdEntryMode(uint8_t flags) {
 	uint8_t mode = 0b00000100 | flags;
 	lcdWord2Screen(0, mode);
+	lcdDisplacementDelay();
 }
 
 /**
