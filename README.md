@@ -14,6 +14,8 @@ Projects into Workspace.
 - Browse to the folder of the repository and select 
 [the dodgemip project path](./dodgemip). Import the project.
 
+You may also generate the documentation using the appended doxyfile.
+
 You should be ready to go!
 
 ## Connections
@@ -39,3 +41,5 @@ Sources are split in a functional way.
 - [input_button.h](./dodgemip/Project_Headers/input_button.h) abstracts and implements input button operations. Last input is recorded in a global structure `inputStatus_t`;
 - [game.h](./dodgemip/Project_Headers/game.h) declares game functions and structures.
 - [main.c](./dodgemip/Sources/main.c) implements the game.
+
+![Source dependencies](./docs/img/sources.png)
